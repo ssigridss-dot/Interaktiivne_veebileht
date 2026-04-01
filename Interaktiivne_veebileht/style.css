@@ -2,27 +2,50 @@ body {
     font-family: Arial;
     background-color: #f4f4f4;
     padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("pildid/taevas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
     color: #333;
 }
 
+/* INPUT väljad */
 input {
-    padding: 8px;
-    margin: 5px;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 5px;       /* ümar kuju */
+    border: 1px solid black;    /* piirjoon */
+    outline: none;
+    font-size: 14px;
 }
 
+/* Kui input on aktiivne */
+input:focus {
+    border-color: #4CAF50;     /* roheline äär */
+}
+
+/* NUPP */
 button {
     padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 5px;       /* sama ümarus */
+    border: 1px solid black; /* piirjoon */
     background-color: #4CAF50;
     color: white;
-    border: none;
     cursor: pointer;
+    font-weight: bold;
 }
 
+/* Hover efekt */
 button:hover {
-    background-color: #45a049;
+    background-color: white;
+    color: #4CAF50;
 }
 
 ul {
@@ -30,7 +53,23 @@ ul {
 }
 
 li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: fit-content; /* oluline! */
+    
     background: white;
-    padding: 8px;
+    color: black;
+    padding: 8px 12px;
     margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+div {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
 }

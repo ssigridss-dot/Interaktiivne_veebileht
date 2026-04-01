@@ -4,43 +4,42 @@ function lisaTekst() {
     document.getElementById("tulemus").textContent = "Sa kirjutasid: " + input;
 }
 
-// To-do list funktsioon
-function lisaTodo() {
-    const input = document.getElementById("todoInput");
-    const tekst = input.value;
+// poenimekirja funktsioon
+let total = 0;
 
-    if (tekst === "") {
-        alert("Palun sisesta ülesanne!");
+function addItem() {
+    const nameInput = document.getElementById("itemName");
+    const priceInput = document.getElementById("itemPrice");
+
+    const name = nameInput.value.trim();
+    const price = Number(priceInput.value);
+
+    if (name === "" || price <= 0) {
+        alert("Sisesta korrektne nimi ja hind!");
         return;
     }
 
-    const li = document.createElement("li");
-    li.textContent = tekst;
+    // Lisa kogusummale
+    total += price;
 
-    // Klõps eemaldab elemendi
+    // Loo listi element
+    const li = document.createElement("li");
+    li.textContent = name + " - " + price + " €";
+
+    // Klikk eemaldab toote ja lahutab hinnast
     li.onclick = function () {
+        total -= price;
+        document.getElementById("total").textContent = total.toFixed(2);
         li.remove();
     };
 
-    document.getElementById("todoList").appendChild(li);
+    document.getElementById("shoppingList").appendChild(li);
 
-    input.value = "";
+    // Uuenda kogusumma
+    document.getElementById("total").textContent = total.toFixed(2);
+
+    // Tühjenda inputid
+    nameInput.value = "";
+    priceInput.value = "";
 }
 
-function liida() {
-    const a = Number(document.getElementById("a").value);
-    const b = Number(document.getElementById("b").value);
-    document.getElementById("vastus").textContent = "Tulemus: " + (a + b);
-}
-
-let juhuarv = Math.floor(Math.random() * 10) + 1;
-
-function arva() {
-    const arvamus = Number(document.getElementById("arvamus").value);
-
-    if (arvamus === juhuarv) {
-        alert("Õige!");
-    } else {
-        alert("Vale, proovi uuesti!");
-    }
-}

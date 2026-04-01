@@ -8,24 +8,21 @@
 </head>
 <body>
     <h1>Minu interaktiivne koduleht</h1>
-    <!-- Kasutaja sisestus -->
-    <input type="text" id="inputText" placeholder="Sisesta midagi...">
-    <button onclick="lisaTekst()">Lisa</button>
+    
+    <!-- Shopping List -->
+    <h2>Poenimekiri</h2>
+    <input type="text" id="itemName" placeholder="Toote nimi">
+    <input type="number" id="itemPrice" placeholder="Hind (€)">
+    <button onclick="addItem()">Lisa toode</button>
 
-    <!-- Dünaamiline sisu -->
-    <p id="tulemus"></p>
+    <ul id="shoppingList"></ul>
 
-    <!-- To-do list -->
-    <h2>To-do list</h2>
-    <input type="text" id="todoInput" placeholder="Uus ülesanne">
-    <button onclick="lisaTodo()">Lisa ülesanne</button>
-    <ul id="todoList"></ul>
+    <h3>Maksumus kokku: <span id="total">0</span> €</h3>
 
-    <h2>Kalkulaator</h2>
-    <input type="number" id="a">
-    <input type="number" id="b">
-    <button onclick="liida()">Liida</button>
-    <p id="vastus"></p>
+    <h2>Viktoriin</h2>
+    
+    
+    
 
     <script src="script.js"></script>
 </body>
