@@ -38,13 +38,11 @@ h1, h2, p {
     color: #1f1f1f;
 }
 
-/* =========================
-   🔧 PARANDUS: INPUT RIDA
-   ========================= */
+/* INPUT RIDA */
 .inputs {
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap; /* oluline */
+    flex-wrap: nowrap;
 }
 
 /* nimi */
@@ -53,10 +51,10 @@ h1, h2, p {
     min-width: 0;
 }
 
-/* hind (SEE OLI KADUNUD PROBLEEM) */
+/* hind */
 #itemPrice {
     flex: 1;
-    min-width: 90px;   /* 👈 SEE TAGAB ET EI KAO */
+    min-width: 90px;
 }
 
 /* input + select */

@@ -2,9 +2,7 @@ let total = 0;
 let selectedTotal = 0;
 let items = [];
 
-// ======================
 // SALVESTAMINE / LAADIMINE
-// ======================
 
 function saveState() {
     const state = {
@@ -36,9 +34,7 @@ function loadState() {
     showSection(state.activeSection || "shoppingSection");
 }
 
-// ======================
 // VAATE VAHETUS
-// ======================
 
 function showSection(id) {
     document.querySelectorAll(".card").forEach(el => {
@@ -50,9 +46,7 @@ function showSection(id) {
     saveState();
 }
 
-// ======================
 // UUDISKIRI
-// ======================
 
 function avaVorm() {
     showSection("formSection");
@@ -74,9 +68,7 @@ function tagasi() {
     showSection("shoppingSection");
 }
 
-// ======================
 // SUMMAD
-// ======================
 
 function updateSelectedTotal() {
     selectedTotal = 0;
@@ -97,9 +89,7 @@ function updateSelectedTotal() {
     saveState();
 }
 
-// ======================
 // FILTER
-// ======================
 
 function applyFilter() {
     const filter = document.getElementById("filterSelect").value;
@@ -113,9 +103,7 @@ function applyFilter() {
     });
 }
 
-// ======================
-// ITEMI LOOMINE (ERALDI FUNKTSIOON)
-// ======================
+// ITEMI LOOMINE
 
 function createItemElement(item, indexOverride = null) {
     const li = document.createElement("li");
@@ -159,9 +147,7 @@ function createItemElement(item, indexOverride = null) {
     document.getElementById("shoppingList").appendChild(li);
 }
 
-// ======================
 // LISA TOODE
-// ======================
 
 function addItem() {
     const name = document.getElementById("itemName").value.trim();
@@ -192,9 +178,7 @@ function addItem() {
     saveState();
 }
 
-// ======================
 // KÄIVITUS
-// ======================
 
 window.onload = function () {
     loadState();
